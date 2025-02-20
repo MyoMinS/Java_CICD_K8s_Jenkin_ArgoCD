@@ -1,6 +1,6 @@
 pipeline {
     agent {
-        docker { image 'myominsoe432/maven-docker-agent:v5' }
+        docker { image 'myominsoe432/maven-docker-agent:v6' }
     }
     stages {
         stage('Build') {
