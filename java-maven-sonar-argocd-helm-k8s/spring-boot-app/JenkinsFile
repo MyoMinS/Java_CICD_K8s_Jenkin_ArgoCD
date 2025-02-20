@@ -1,14 +1,14 @@
 pipeline {
     agent {
-        docker {
-            image 'myominsoe432/maven-docker-agent:v3'
-            args '--user root -v /var/run/docker.sock:/var/run/docker.sock'
-        }
+        docker { image 'myominsoe432/maven-docker-agent:v5' }
     }
     stages {
         stage('Build') {
             steps {
-                sh 'mvn clean package'
+                script {
+                    // Ensure Maven build runs in the container
+                    sh 'mvn clean install'
+                }
             }
         }
     }
