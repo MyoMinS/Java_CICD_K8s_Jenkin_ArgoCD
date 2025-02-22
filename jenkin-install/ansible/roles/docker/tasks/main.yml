@@ -1,0 +1,19 @@
+---
+- name: Install Docker
+  ansible.builtin.apt:
+    name: docker.io
+    state: present
+
+- name: Add Ubuntu user to Docker group
+  ansible.builtin.user:
+    name: ubuntu
+    groups: docker
+    append: true
+  notify: Restart Docker service
+
+- name: Add Jenkins user to Docker group
+  ansible.builtin.user:
+    name: jenkins
+    groups: docker
+    append: true
+  notify: Restart Jenkins service

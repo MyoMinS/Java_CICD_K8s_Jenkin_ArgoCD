@@ -1,0 +1,22 @@
+---
+- name: Start Docker service
+  ansible.builtin.service:
+    name: docker
+    state: started
+    enabled: true
+
+- name: Stop Docker service
+  ansible.builtin.service:
+    name: docker
+    state: stopped
+    enabled: true
+
+- name: Restart Docker service
+  ansible.builtin.service:
+    name: docker
+    state: restarted
+
+- name: Restart Jenkins service
+  ansible.builtin.service:
+    name: jenkins
+    state: restarted

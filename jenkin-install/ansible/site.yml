@@ -1,0 +1,8 @@
+- name: Install Jenkin server
+  hosts: master
+  become: true
+  vars_files:
+   - group_vars/group.yml
+  roles:
+   - common
+   - docker
