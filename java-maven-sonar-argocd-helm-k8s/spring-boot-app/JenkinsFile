@@ -60,7 +60,7 @@ pipeline {
                     echo "Checking Git repository..."
                     WORKSPACE=${env.WORKSPACE}
                     echo '${WORKSPACE}'
-                    git config --global --add safe.directory "/var/lib/jenkins/workspace/${WORKSPACE}"
+                    git config --global --add safe.directory "/var/lib/jenkins/workspace/java"
                     git config --global user.email "myominsoe432@gmail.com"
                     git config --global user.name "MyoMinS"
                     BUILD_NUMBER=${BUILD_NUMBER}
