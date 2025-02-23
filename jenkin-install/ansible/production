@@ -1,5 +1,5 @@
 [master]
-master ansible_host=18.143.73.164
+master ansible_host=3.0.56.6
 
 [all:vars]
 ansible_ssh_extra_args='-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null'

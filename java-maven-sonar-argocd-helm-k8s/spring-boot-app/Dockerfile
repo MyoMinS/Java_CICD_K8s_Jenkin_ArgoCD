@@ -1,13 +1,15 @@
-# You can change this base image to anything else
-# But make sure to use the correct version of Java
-FROM adoptopenjdk/openjdk11:alpine-jre
+# Use official Tomcat 9 (or later) as the base image
+FROM tomcat:9-jdk8
 
-# Simply the artifact path
-ARG artifact=target/spring-boot-web.jar
+# Set environment variables
+ENV CATALINA_HOME /usr/local/tomcat
+ENV DEPLOY_DIR /usr/local/tomcat/webapps
 
-WORKDIR /opt/app
+# Copy the WAR file to Tomcat's webapps directory
+COPY target/resume-1.0.war $DEPLOY_DIR/resume.war
 
-COPY ${artifact} app.jar
+# Expose port 8080 for web traffic
+EXPOSE 8080
 
-# This should not be changed
-ENTRYPOINT ["java","-jar","app.jar"]
+# Start Tomcat
+CMD ["catalina.sh", "run"]
