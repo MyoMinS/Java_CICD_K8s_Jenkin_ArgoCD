@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: spring-boot-app
-        image: myominsoe432/ultimate-cicd:17
+        image: myominsoe432/ultimate-cicd:33
         ports:
         - containerPort: 8080
