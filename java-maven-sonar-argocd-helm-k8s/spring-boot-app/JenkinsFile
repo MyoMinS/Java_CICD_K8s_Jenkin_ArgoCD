@@ -58,7 +58,7 @@ pipeline {
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     echo "Checking Git repository..."
-                    git status || echo "Not a git repository!"
+                    git config --global --add safe.directory /var/lib/jenkins/workspace/
                     git config user.email "myominsoe432@gmail.com"
                     git config user.name "MyoMinS"
                     BUILD_NUMBER=${BUILD_NUMBER}
