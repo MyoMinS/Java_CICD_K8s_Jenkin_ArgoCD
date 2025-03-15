@@ -24,3 +24,5 @@ TestResults.xml
 .terraform*
 #ansible key file
 ansible.pem
+
+*.DS_Store*
